@@ -43,6 +43,7 @@ ol {
 /* Кастомный скроллбар */
 .custom-scrollbar::-webkit-scrollbar {
   width: 4px;
+  height: 0; /* появился нижний скрол, не скролит, временно убираю*/
 }
 
 .custom-scrollbar::-webkit-scrollbar-track {
@@ -64,8 +65,16 @@ ol {
 
 /* result blok */
 
+.result__video-container {
+  height: 386px;
+  margin-bottom: 16px;
+}
+
 .result__video {
   width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 .search-form {
@@ -82,4 +91,26 @@ ol {
 .content__list-container {
   height: 298px;
   overflow: scroll;
+}
+
+.content__list {
+  display: flex;
+  gap: 30px;
+  flex-direction: column;
+}
+
+.content__video-card {
+  display: flex;
+  align-items: flex-start;
+}
+
+.content__video-card-description-container {
+  flex-grow: 1;
+}
+
+.content__video-card-thumbnail {
+  width: 194px;
+  height: 103px;
+  object-fit: cover;
+  object-position: center;
 }
