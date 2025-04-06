@@ -53,6 +53,16 @@ ol {
   background-color: #D9D9D9;
 }
 
+.visually-hidden {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+} 
+
 /* main */
 
 .content {
@@ -82,13 +92,87 @@ ol {
   align-items: flex-start;
 }
 
+.search-form__fieldset {
+  border: none;
+}
+
 .search-form__fieldset-title {
   font-weight: 400;
   font-size: 18px;
   line-height: 100%;
+  margin-bottom: 5px;
+}
+
+.search-form__label {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+}
+
+.search-form__label-text {
+  margin-left: 5px;
+  line-height: 100%;
+}
+
+.search-form__label:has(:focus-visible) {
+  outline: rgb(255 255 255 / 100%) solid 1px;
+  outline-offset: 1px;
+}
+
+.search-form__textfield {
+  appearance: none;
+  font-family: inherit;
+  font-weight: inherit;
+  font-size: inherit;
+  border: 1px solid rgb(255 255 255 / 100%);
+  border-left: none;
+  border-right: none;
+  background-color: transparent;
+  min-width: 225px;
+  padding: 2.5px 0;
+  color: rgb(255 255 255 / 100%);
+}
+
+.search-form__textfield:focus-visible {
+  outline: none;
+}
+
+.search-form__checkbox-list {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.search-form__pseudo-checkbox {
+  position: relative;
+  width: 19px;
+  height: 19px;
+  border: 1px solid rgb(255 255 255 / 100%);
+}
+
+.search-form__checkbox {
+  outline: none;
+}
+
+.search-form__checkbox:checked + .search-form__pseudo-checkbox::after {
+  content: '';
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  width: 15px;
+  height: 15px;
+  background-color: rgb(255 255 255 / 100%);
+}
+
+.search-form__label:hover .search-form__label-text {
+  text-decoration: underline;
 }
 
 /* content__details blok */
+
+.content__details {
+  place-items: stretch;
+}
 
 .title {
   margin-bottom: 26px;
@@ -112,7 +196,6 @@ ol {
 
 .content__list {
   display: flex;
-  width: 390px;
   gap: 30px;
   flex-direction: column;
 }
@@ -128,25 +211,26 @@ ol {
 }
 
 .content__video-card-description-container {
-  width: 196px;
+  flex-grow: 1;
+  max-width: 196px;
 }
 
 .content__video-card-title {
   font-family: Oswald, sans-serif;
   font-weight: 700;
   font-size: 30px;
-  line-height: 118%;
+  line-height: 100%;
   text-transform: uppercase;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+  margin-bottom: 6px;
 }
 
 .content__video-card-description {
-  font-size: 18px;
-  line-height: 94%;
-  -webkit-line-clamp: 3; 
-  line-clamp: 3; 
+  line-height: 90%;
+  -webkit-line-clamp: 4; 
+  line-clamp: 4; 
   display: -webkit-box; 
   -webkit-box-orient: vertical; 
   overflow: hidden;
