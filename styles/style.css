@@ -15,6 +15,7 @@ html {
   color: #fff;
   font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 18px;
+  font-weight: 400;
   background-color: #1b1919;
   display: flex;
   align-items: center;
@@ -53,6 +54,31 @@ ol {
   background-color: #D9D9D9;
 }
 
+.button {
+  appearance: none;
+  font-family: inherit;
+  font-weight: inherit;
+  font-size: inherit;
+  border: 1px solid rgb(255 255 255 / 100%);
+  color: rgb(255 255 255 / 100%);
+  line-height: 100%;
+  padding: 6px 0;
+  background-color: transparent;
+}
+
+.button:hover {
+  text-decoration: underline;
+}
+
+.button:active {
+  background-color: rgb(84 80 80 / 100%);
+}
+
+.button:focus-visible {
+  outline: rgb(255 255 255 / 100%) solid 1px;
+  outline-offset: 1px;
+}
+
 .visually-hidden {
   position: absolute;
   inline-size: 1px;
@@ -85,6 +111,8 @@ ol {
   object-fit: cover;
   object-position: center;
 }
+
+/* search-form */
 
 .search-form {
   display: flex;
@@ -119,6 +147,10 @@ ol {
   outline-offset: 1px;
 }
 
+.search-form__label:has(.search-form__textfield:active) {
+  outline: none;
+}
+
 .search-form__textfield {
   appearance: none;
   font-family: inherit;
@@ -133,6 +165,11 @@ ol {
   color: rgb(255 255 255 / 100%);
 }
 
+.search-form__textfield:active {
+  border-left: 1px solid rgb(255 255 255 / 100%);
+  border-right: 1px solid rgb(255 255 255 / 100%);
+}
+
 .search-form__textfield:focus-visible {
   outline: none;
 }
@@ -144,7 +181,9 @@ ol {
 }
 
 .search-form__pseudo-checkbox {
-  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 19px;
   height: 19px;
   border: 1px solid rgb(255 255 255 / 100%);
@@ -156,9 +195,6 @@ ol {
 
 .search-form__checkbox:checked + .search-form__pseudo-checkbox::after {
   content: '';
-  position: absolute;
-  top: 1px;
-  left: 1px;
   width: 15px;
   height: 15px;
   background-color: rgb(255 255 255 / 100%);
@@ -166,6 +202,11 @@ ol {
 
 .search-form__label:hover .search-form__label-text {
   text-decoration: underline;
+}
+
+.search-form__submit-button {
+  min-width: 194px;
+  align-self: flex-end;
 }
 
 /* content__details blok */
@@ -189,8 +230,7 @@ ol {
 
 .content__list-container {
   height: 298px;
-  padding-left: 2px;
-  padding-right: 3px;
+  padding: 0 3px 2px 2px;
   overflow-y: scroll;
 }
 
@@ -198,6 +238,7 @@ ol {
   display: flex;
   gap: 30px;
   flex-direction: column;
+  margin-bottom: 30px;
 }
 
 .content__card-link {
@@ -212,7 +253,8 @@ ol {
 
 .content__video-card-description-container {
   flex-grow: 1;
-  max-width: 196px;
+  flex-basis: 0;
+  overflow: hidden;
 }
 
 .content__video-card-title {
@@ -237,8 +279,12 @@ ol {
 }
 
 .content__video-card-thumbnail {
-  width: 194px;
+  min-width: 194px;
   height: 103px;
   object-fit: cover;
   object-position: center;
+}
+
+.more-button {
+  width: 100%;
 }
