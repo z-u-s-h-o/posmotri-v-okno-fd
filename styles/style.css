@@ -160,7 +160,6 @@ ol {
   padding-inline: 0;
   color: rgb(255 255 255 / 100%);
   font-family: inherit;
-  font-weight: inherit;
   font-size: inherit;
   line-height: 100%;
   background-color: transparent;
@@ -169,9 +168,6 @@ ol {
 
 .search-form__textfield::placeholder {
   color: rgb(255 255 255 / 70%);
-  font-family: inherit;
-  font-weight: inherit;
-  font-size: inherit;
   line-height: 100%;
 }
 
@@ -233,7 +229,6 @@ ol {
 .title {
   margin-bottom: 22px;
   font-family: Oswald, sans-serif;
-  font-weight: 700;
   font-size: 75px;
   line-height: 94%;
   text-transform: uppercase;
@@ -254,7 +249,6 @@ ol {
   display: flex;
   flex-direction: column;
   gap: 30px;
-  margin-bottom: 30px;
 }
 
 .content__card-link {
@@ -266,6 +260,10 @@ ol {
 .content__card-link:hover {
   text-decoration: underline;
   cursor: pointer;
+}
+
+.content__card-link:active {
+  background-color: rgb(84 80 80 / 100%);
 }
 
 .content__card-link:focus-visible {
@@ -292,7 +290,6 @@ ol {
   margin-bottom: 5px;
   overflow: hidden;
   font-family: Oswald, sans-serif;
-  font-weight: 700;
   font-size: 30px;
   line-height: 100%;
   text-transform: uppercase;
@@ -318,4 +315,5 @@ ol {
 
 .more-button {
   width: 100%;
+  margin-top: 30px;
 }
